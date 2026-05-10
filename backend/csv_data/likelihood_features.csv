@@ -1,0 +1,5 @@
+world_state,severity_score,mental_state_score,time_days,event_occurred
+0,0.4,0.6,30,1
+1,0.9,0.9,120,1
+0,0.6,0.4,10,0
+1,0.4,0.3,0,0
