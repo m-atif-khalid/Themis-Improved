@@ -4,6 +4,7 @@ This directory contains the Python backend module(s) for Themis-Improved.
 
 ## Structure
 - `deepface_module.py`: Image matching + MySQL record lookup using DeepFace.
+- `search_module.py`: Text search with BM25 + Levenshtein-based fuzzy matching.
 - `mysql_data/`: Reserved for local MySQL-related artifacts (no sensitive data committed).
 - `images_data/`: Image gallery for matching (filenames should be the person name or primary key ID).
 
@@ -11,10 +12,12 @@ This directory contains the Python backend module(s) for Themis-Improved.
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install deepface mysql-connector-python pandas
+pip install deepface mysql-connector-python pandas rank_bm25 rapidfuzz
 ```
 
 ## Usage
 ```bash
 python backend/deepface_module.py --input path/to/query.jpg --images backend/images_data
+
+python backend/search_module.py --query "john doe" --table criminals --column name --top 7
 ```
